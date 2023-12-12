@@ -1,0 +1,168 @@
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: "Rethink Sans", sans-serif;
+  background: #e3e0ce;
+  max-width: 500px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin: 0 auto;
+}
+
+/* Styles for color input */
+input[type="color"] {
+  border: none;
+  width: 32.5%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+}
+
+/* Heading styles */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for text input */
+.qr-text {
+  padding: 1rem;
+  display: block;
+  background: #fffce8;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  color: black;
+  outline: none;
+}
+
+/* Styles for the container of the generated QR code */
+#qr-code {
+  color: black;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+#qr-code img,
+#qr-code canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Styles for the row containing color and size inputs */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the size selection dropdown */
+.sizes {
+  width: 32.5%;
+  height: 40px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  background: #fffce8;
+  outline: none;
+}
+
+/* Styles for buttons */
+.btn {
+  background: #fffce8;
+  max-width: 200px;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.btn i {
+  width: 20px;
+  margin-left: 10px;
+}
+
+/* Additional styles for the Share button */
+.share-btn {
+  margin-left: 0.7rem;
+}
+
+/* Styles for the container of download and share actions */
+.action-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Media query for smaller screens (max-width: 512px) */
+@media (max-width: 512px) {
+  body {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #qr-code {
+    height: 95vw;
+    width: 95vw;
+  }
+
+  #qr-code i,
+  #qr-code canvas {
+    max-width: 95vw !important;
+    max-height: 95vw !important;
+  }
+
+  /* Adjust button minimum width */
+  .btn {
+    min-width: unset;
+  }
+}
+
+/* Media query for even smaller screens (max-width: 350px) */
+@media (max-width: 350px) {
+  /* Adjust layout for action container */
+  .action-container {
+    flex-direction: column;
+  }
+
+  /* Adjust styles for the Share button */
+  .share-btn {
+    margin-left: 0;
+    margin-top: 0.7rem;
+  }
+}

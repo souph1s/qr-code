@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Set favicon (icon in the browser tab) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://s.glbimg.com/jo/g1/f/original/2011/05/17/qrcode.jpg"
+    />
+
+    <!-- Preconnect to external resources for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Include a font from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Include a stylesheet for Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css"
+    />
+
+    <!-- Include a custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!-- Set the title of the HTML page -->
+  <title>QR Code Generator</title>
+
+  <body>
+    <!-- Create a section for the QR code generator -->
+    <section>
+      <h1>QR Code Generator</h1>
+
+      <!-- Create a row with input elements for color selection, size selection, and text input -->
+      <div class="row">
+        <input type="color" class="light" value="#ffffff" />
+        <input type="color" class="dark" />
+        <select class="sizes">
+          <!-- Define options for QR code sizes -->
+          <option value="100">100x100</option>
+          <option value="200">200x200</option>
+          <option value="300">300x300</option>
+          <option value="400" selected>400x400</option>
+          <option value="500">500x500</option>
+          <option value="600">600x600</option>
+          <option value="700">700x700</option>
+          <option value="800">800x800</option>
+          <option value="900">900x900</option>
+          <option value="1000">1000x1000</option>
+        </select>
+      </div>
+
+      <!-- Input field for text to be encoded in the QR code -->
+      <input
+        type="text"
+        class="qr-text"
+        placeholder="Write your text here..."
+      />
+
+      <!-- Container to display the generated QR code -->
+      <div id="qr-code"></div>
+
+      <!-- Container for download and share actions -->
+      <div class="action-container">
+        <!-- Download button with icon -->
+        <a href="#" class="download btn" download="QRC">
+          <span>Download</span>
+          <i class="ph-fill ph-arrow-fat-down"></i>
+        </a>
+
+        <!-- Share button with icon -->
+        <button class="btn share-btn">
+          <span>Share</span>
+          <i class="ph-fill ph-share-network"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Include the QR code generation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Include custom JavaScript for the QR code generator -->
+    <script src="index.js"></script>
+
+    <!-- Include Phosphor Icons library -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+  </body>
+</html>
